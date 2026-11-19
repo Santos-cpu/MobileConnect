@@ -129,12 +129,6 @@ Desde `DetalleEntregaActivity`, el repartidor puede confirmar una entrega y noti
 * **Gestión de permisos en tiempo de ejecución:** Se verifica y solicita `Manifest.permission.SEND_SMS` mediante `ActivityResultContracts.RequestPermission()`.
 * **Envío directo y respaldo seguro:** Si el usuario concede el permiso, el envío se realiza mediante `SmsManager` (compatible con Android 12+ y soporte multiparte para mensajes largos). Si el permiso es denegado o el dispositivo no dispone de módulo telefónico/SIM, se ejecuta un *fallback* mediante `Intent(Intent.ACTION_SENDTO)` (`smsto:`) abriendo la app de mensajes con el texto pre-rellenado.
 
-![Solicitud de permiso SMS](evidencias/08a_permiso_sms.png)  
-*Figura 8a. Solicitud en tiempo de ejecución del permiso `SEND_SMS` en dispositivo físico.*
-
-![Confirmación de envío SMS](evidencias/08b_envio_sms_confirmacion.png)  
-*Figura 8b. Confirmación del envío del mensaje SMS al cliente al completar la entrega.*
-
 ---
 
 ## 6. Validación final en dispositivo físico real
